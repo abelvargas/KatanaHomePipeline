@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stormXML>
+<stormXML version="1k">
+	<formats>
+		<format width="960" height="540" pixelAspect="1.00" name="HD_1/2" groupName="TV"/>
+		<format width="480" height="270" pixelAspect="1.00" name="HD_1/4" groupName="TV"/>
+	</formats>
+</stormXML>
