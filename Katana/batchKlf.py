@@ -4,10 +4,14 @@
 import time
 from Katana import Utils, Callbacks
 
-
-#Change the path to your own. First where the Alembics are, then where to save the KLFs
+#This script assumes all your alembic files live on the same folder. If that's not your case
+#you will have to write your own function that loops through the directory and grabs the .abc
+#files.
 alembicPath = "C:/Users/abelv/Documents/Projetos/KB3D_IndustrialScifi/model.buildings/"
+#Path to where you want to save the KLFs
 klfPath = "C:/Users/abelv/Documents/Projetos/KB3D_IndustrialScifi/klf.buildings/"
+#Simple version control. You can go all out and pick the latest version of the KLFs
+#using another function.
 klfVersion = "_03"
 
 #Get alembic files in alembicDir includins directory path
@@ -28,13 +32,12 @@ for alembic in alembicFiles:
     assetInNode.getParameter("abcAsset").setValue(alembic,0)
     #file name without extention
     alembicFileName = (alembic.split("/")[-1]).split(".")[0]
-    time.sleep(1)
-    #Find first child of geo with _grp on the name
-    Utils.EventModule.ProcessAllEvents() #refresh widget
-    collector = Widgets.CollectAndSelectInScenegraph('//*_grp', "/root/world/geo")
-    time.sleep(1)
-    rootLocationPath = collector.collectAndSelect(select=True, replace=True, node=node)[0]
-    print(rootLocationPath)
+    #Find first child of geo
+    # Get the "name" parameter which is the root location of the alembic
+    p = assetInNode.getParameter('name').getValue(0)
+    geo = Nodes3DAPI.GetGeometryProducer(assetInNode, NodegraphAPI.GetCurrentGraphState())
+    child = geo.getProducerByPath(p)
+    rootLocationPath = child.getFirstChild().getFullName()
     #edit LookFileBake saveTo parameter and bake.
     lookFileBakeNode.getParameter("rootLocations").getChildByIndex(0).setValue(" ",0)
     lookFileBakeNode.getParameter("rootLocations").getChildByIndex(0).setValue(rootLocationPath,0)
