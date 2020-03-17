@@ -13,6 +13,6 @@ set REDSHIFT_CACHE_BUDGET=
 set REDSHIFT_CACHE_FOLDER=
 set REDSHIFT_SELECTED_CUDA_DEVICES=
 
-set "path=%REDSHIFT_HOME%;%path%"
+set "PATH=%REDSHIFT_HOME%;%PATH%;%KATANA_HOME%\bin;%KATANA_HOME%\plugins\Resources\Usd\lib"
 set "KATANA_RESOURCES=%REDSHIFT4KATANA_HOME%;C:\Users\abelv\Documents\KatanaHomePipeline\KatanaResources"
-"%KATANA_HOME%\bin\katanaBin.exe"
+"%KATANA_HOME%\bin\katanaBin.exe;%KATANA_HOME%\plugins\Resources\Usd\plugin"
