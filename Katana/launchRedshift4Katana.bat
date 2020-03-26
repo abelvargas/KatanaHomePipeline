@@ -4,10 +4,10 @@ set "KATANA_VERSION=3.5v2"
 
 set "KATANA_HOME=C:\Program Files\Katana%KATANA_VERSION%"
 set "REDSHIFT_HOME=C:\ProgramData\Redshift\bin"
-set "REDSHIFT4KATANA_HOME=C:\ProgramData\Redshift\Plugins\Katana\3.2v1"
+set "REDSHIFT4KATANA_HOME=C:\ProgramData\Redshift\Plugins\Katana\3.5v1"
 
 set DEFAULT_RENDERER=Redshift
-set "KATANA_TAGLINE=With Redshift 2.6"
+set "KATANA_TAGLINE=With Redshift 3.0.17"
 
 set REDSHIFT_CACHE_BUDGET=
 set REDSHIFT_CACHE_FOLDER=
