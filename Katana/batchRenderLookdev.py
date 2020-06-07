@@ -1,5 +1,5 @@
 ###Attempting to render in a loop###
-#all very messy right now.
+#all very messy right now. AND NOT WORKING
 
 import os
 ###BIG RENDER LOOP###
