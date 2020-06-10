@@ -51,8 +51,9 @@ for i in alembicFiles:
 #match alembiFileName to klf
     klfMatch = [i for i in klfFiles if alembicFileName in i][0]
     klf_in_node = NodegraphAPI.CreateNode("LookFileAssign", abc_grp)
-    klf_in_node.getParameter("args.lookfile.asset").setValue(klfMatch, 0)
-    klf_in_node.getParameter("CEL").setValue("((=/root/world/geo))",0)
+    klf_in_node.getParameter("args.lookfile.asset.value").setValue(klfMatch, 0)
+    klf_in_node.getParameter("args.lookfile.asset.enable").setValue(1, 0)
+
 
     abc_in_node_Position = NodegraphAPI.GetNodePosition(abc_in_node)
     xpos = abc_in_node_Position[0]
@@ -66,5 +67,7 @@ for i in alembicFiles:
     abc_node_port.connect(klf_in_port)
     klf_out_port.connect(abc_grp_port)
 
+    klf_in_node.getParameter('CEL').setExpression("getNode('"+klf_in_node.getInputPorts()[0].getConnectedPorts()[0].getNode().getName()+"\').name",0)
+    klf_in_node.getParameter('CEL').setExpressionFlag(True)
     # Add to importomatic
     impo_node.insertNodeIntoOutputMerge(abc_grp, "default") # (node, importomatic output name)
