@@ -20,17 +20,17 @@ for r, d, f in os.walk(klfPath):
 ImportomaticAPI = Plugins.ImportomaticAPI
 KATANA_ROOT = os.getenv('KATANA_ROOT')
 outputName = 'default'
+#create Importomatic
+importomaticNode = NodegraphAPI.CreateNode("Importomatic", NodegraphAPI.GetRootNode())
+NodegraphAPI.SetNodeViewed(importomaticNode, True, True)
+NodegraphAPI.SetNodeEdited(importomaticNode, True, True)
 
-impo_node = NodegraphAPI.CreateNode("Importomatic", NodegraphAPI.GetRootNode())
-NodegraphAPI.SetNodeViewed(impo_node, True, True)
-NodegraphAPI.SetNodeEdited(impo_node, True, True)
-
-# Create alembic group node
+# Bring alembics and klfFiles
 for i in alembicFiles:
     alembicFileName = (i.split("/")[-1]).split(".")[-2]
-    alembicNode = ImportomaticAPI.AssetModule.TriggerBatchCreateCallback('Alembic', impo_node, i, '')
-    impo_node.insertNodeIntoOutputMerge(alembicNode, outputName)
-    impo_node.layoutContents()
+    alembicNode = ImportomaticAPI.AssetModule.TriggerBatchCreateCallback('Alembic', importomaticNode, i, '')
+    importomaticNode.insertNodeIntoOutputMerge(alembicNode, outputName)
+    importomaticNode.layoutContents()
     klfMatch = [i for i in klfFiles if alembicFileName in i][0]
     alembicModule = ImportomaticAPI.AssetModule.GetHandlerForNode(alembicNode)
     alembicTreeRoot = alembicModule.getAssetTreeRoot(alembicNode)
