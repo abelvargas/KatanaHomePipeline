@@ -8,7 +8,7 @@ set "REDSHIFT4KATANA_HOME=C:\ProgramData\Redshift\Plugins\Katana\3.5v1"
 
 set DEFAULT_RENDERER=Redshift
 set "KATANA_TAGLINE=With Redshift 3.0.17"
-
+set "OCIO=C:\Program Files\OCIO\aces_1.0.3\config.ocio"
 set REDSHIFT_CACHE_BUDGET=
 set REDSHIFT_CACHE_FOLDER=
 set REDSHIFT_SELECTED_CUDA_DEVICES=
