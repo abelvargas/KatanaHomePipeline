@@ -1,0 +1,2 @@
+katanaBin.exe --batch --katana-file=C:\Users\abelv\Documents\Projetos\HoverShip\hoverShip_01.katana -t 1-200 --render-node=Render
+
