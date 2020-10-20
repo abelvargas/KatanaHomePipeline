@@ -1,6 +1,6 @@
 rem Katana3.7 with 3Delight and USD
 
-set "KATANA_VERSION=4.0v1.010011b"
+set "KATANA_VERSION=4.0v1.010028b"
 set "DEFAULT_RENDERER=dl"
 
 set "KATANA_HOME=C:\Program Files\Katana%KATANA_VERSION%"
