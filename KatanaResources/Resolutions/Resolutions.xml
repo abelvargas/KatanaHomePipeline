@@ -5,5 +5,6 @@
 		<format width="960" height="540" pixelAspect="1.00" name="HD_1/2" groupName="TV"/>
 		<format width="480" height="270" pixelAspect="1.00" name="HD_1/4" groupName="TV"/>
 		<format width="3840" height="2160" pixelAspect="1.00" name="4K_UHD" groupName="TV"/>
+		<format width="7680" height="4320" pixelAspect="1.00" name="8K_UHD" groupName="TV"/>
 	</formats>
 </stormXML>
