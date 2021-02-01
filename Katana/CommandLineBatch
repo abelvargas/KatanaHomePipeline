@@ -1,5 +1,4 @@
-cd Program Files\Katana4.0v1.010011b\bin
-
+cd Program Files\Katana4.0v2\bin
 
 import NodegraphAPI
 from Katana import KatanaFile
