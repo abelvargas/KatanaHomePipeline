@@ -7,7 +7,7 @@ set "REDSHIFT_HOME=C:\ProgramData\Redshift\bin"
 set "REDSHIFT4KATANA_HOME=C:\ProgramData\Redshift\Plugins\Katana\4.0v1"
 
 set DEFAULT_RENDERER=Redshift
-set "KATANA_TAGLINE=Redshift + USD"
+set "KATANA_TAGLINE=Redshift + 3Delight +USD"
 
 set "DELIGHT=C:\Program Files\3Delight"
 set "DLFK_INSTALL_PATH=%DELIGHT%\3DelightForKatana"
