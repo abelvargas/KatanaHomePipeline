@@ -13,13 +13,7 @@ renderSettings.mode=RenderManager.RenderModes.DISK_RENDER
 renderSettings.asynchRenderMessageCB=messageHandler
 renderSettings.asynch=False
 
-for frame in range(1087, 1150):
-    print '-' * 80
-    print '\nRendering Node "%s" frame %s...' % (RenderNode.getName(), frame)
-    renderSettings.frame = frame
-    RenderManager.StartRender('diskRender', node=RenderNode, settings=renderSettings)
-
-for frame in range(1243, 1390):
+for frame in range(1001, 1050):
     print '-' * 80
     print '\nRendering Node "%s" frame %s...' % (RenderNode.getName(), frame)
     renderSettings.frame = frame
